@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hogwarts</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: url('https://wallpapers-clan.com/wp-content/uploads/2024/10/hogwarts-castle-magical-lake-view-desktop-wallpaper-preview.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: black;
+      text-shadow: 2px 2px 4px #fff;
+    }
+
+    p {
+      font-size: large;
+      color: black;
+    }
+
+    .crest {
+      width: 150px;
+      height: auto;
+      margin: 10px;
+      transition: transform 0.5s;
+    }
+
+    .crest:hover {
+      transform: scale(1.1);
+    }
+
+    .houses {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .house {
+      margin: 15px;
+    }
+
+    #quiz {
+      margin-top: 40px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: maroon;
+      border: none;
+      color: #000;
+      cursor: pointer;
+    }
+
+     button2 {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: darkblue;
+      border: none;
+      color: #000;
+      cursor: pointer;
+    }
+
+      button3 {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: yellow;
+      border: none;
+      color: #000;
+      cursor: pointer;
+    }
+
+     button4 {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: green;
+      border: none;
+      color: #000;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: gold;
+    }
+
+      button2:hover {
+      background-color: burlywood;
+    }
+
+      button3:hover {
+      background-color: black;
+      color: white;
+    }
+
+      button4:hover {
+      background-color: grey;
+      color: white;
+    }
+
+    #result {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: lightgreen;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Hogwarts!</h1>
+  <p>Discover the magic of each house and find where you belong.</p>
+
+  <div class="houses">
+    <div class="house">
+      <img src="https://i.pinimg.com/1200x/05/4f/34/054f3422f95f5e2873e6303442b07b8c.jpg" alt="Gryffindor" class="crest">
+      <p><strong>Gryffindor:</strong> Brave and daring.</p>
+    </div>
+    <div class="house">
+      <img src="https://i.pinimg.com/736x/51/40/1c/51401c10f44f43cd1451f90094ddf9c5.jpg" alt="Slytherin" class="crest">
+      <p><strong>Slytherin:</strong> Cunning and ambitious.</p>
+    </div>
+    <div class="house">
+      <img src="https://i.pinimg.com/1200x/cd/aa/4e/cdaa4ec281b44b4ace0a285a07d59f36.jpg" alt="Ravenclaw" class="crest">
+      <p><strong>Ravenclaw:</strong> Wise and creative.</p>
+    </div>
+    <div class="house">
+      <img src="https://i.pinimg.com/736x/d9/87/ca/d987ca4ffd01637f47c327277295609f.jpg" alt="Hufflepuff" class="crest">
+      <p><strong>Hufflepuff:</strong> Loyal and kind.</p>
+    </div>
+  </div>
+
+  <div id="quiz">
+    <h2>Sorting Hat Quiz</h2>
+    <p>What quality best describes you?</p>
+    <button onclick="sortMe('bravery')">Bravery</button>
+    <button2 onclick="sortMe('intelligence')">Intelligence</button2>
+    <button3 onclick="sortMe('loyalty')">Loyalty</button3>
+    <button4 onclick="sortMe('ambition')">Ambition</button4>
+    <div id="result"></div>
+  </div>
+
+  <audio autoplay loop>
+    <source src="Harry_Potter_Theme_Song.mp3" type="audio/mpeg">
+    <source src="Harry_Potter_Theme_Song.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function sortMe(choice) {
+      let house = '';
+      if (choice === 'bravery') house = 'Gryffindor!';
+      else if (choice === 'intelligence') house = 'Ravenclaw!';
+      else if (choice === 'loyalty') house = 'Hufflepuff!';
+      else if (choice === 'ambition') house = 'Slytherin!';
+      document.getElementById('result').innerText = `🧙 You belong in ${house}`;
+    }
+  </script>
+</body>
+</html>
